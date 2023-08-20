@@ -22,4 +22,10 @@ in interview ask the person do you have a house or planing to use one ?
  - or to run application in mutiple enviroment
 # how docker work
 
-CLI (client machine) and docker server --> docker deamon --> check image or container
+CLI (client machine) and docker server --> docker deamon --> check image or container and do based on that cli
+</br>
+layered file system--> so each new container build they have some of the same layered, so it is super memoery efficent, and they have resource isolation so taht if one container fail or take to much memoery it does not stop orther Container
+
+
+--> jenkin
+--> k8s
