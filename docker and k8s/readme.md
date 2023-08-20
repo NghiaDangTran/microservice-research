@@ -20,4 +20,6 @@ in interview ask the person do you have a house or planing to use one ?
  - so suppose there are 3 people in your house, u, ur wife, and your children
  - so in the end we can summary that docker is use for mutiple application in one server or one machine
  - or to run application in mutiple enviroment
-# how docker worktmr
+# how docker work
+
+CLI (client machine) and docker server --> docker deamon --> check image or container
