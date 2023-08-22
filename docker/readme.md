@@ -44,4 +44,40 @@ but run with cmd will not make a new layer, like a runtime command
 docker compose use a set of rule to run multiple container together
 
 we can share data inone docker app using vloumes
+
+
+# docker command
+## Basic Docker Commands:
+
+ - docker --version: Display Docker version information. 
+ - docker info: Display system-wide information about Docker and its components.
+## Image Commands:
+
+ - docker images: List all images on your local system.
+ - docker rmi <image-id>: Remove a Docker image.
+ - docker pull <image-name>: Pull an image from a Docker registry (like Docker Hub).
+ - docker build -t <image-name>:<tag> .: Build a Docker image from a Dockerfile in the current directory.
+## Container Commands:
+
+ - docker ps: List running containers.
+ - docker ps -a: List all containers (including stopped ones).
+ - docker run <image-name>: Run a container from an image.
+ - docker start <container-id>: Start a stopped container.
+ - docker stop <container-id>: Stop a running container.
+ - docker restart <container-id>: Restart a container.
+ - docker rm <container-id>: Remove a stopped container.
+## extra
+ - docker logs
+ - docker inspect
+ - docker exec -it <container-id> /bin/sh
+ - docker network ls: List all Docker networks.
+ - docker network create <network-name>: Create a new network.
+ - docker network rm <network-name>: Remove a network.
+ - docker volume ls: List all volumes.
+ - docker volume create <volume-name>: Create a new volume.
+ - docker volume rm <volume-name>: Remove a volume.
+ - docker-compose up: Start services defined in a docker-compose.yml file.
+ - docker-compose down: Stop and remove all services defined in the docker-compose.yml file.
+ - docker-compose logs <service-name>: View the logs of a specific service.
+## use -t for name
 ![image](https://github.com/NghiaDangTran/microservice-research/assets/33323750/39b9ff23-699f-41ff-8a1c-485ed69f3caf)
