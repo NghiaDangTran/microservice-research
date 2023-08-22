@@ -1,1 +1,40 @@
-  
+  # what is Kubernets
+   - it is container orchestraton tool
+   - help to manage containerized applicatins in different deploment enviroment (cloud, on premise)
+# What problem does K8s solve
+ - trend from Monolith to microservice
+ - increased usage of contianers
+ - if u have alot of container , the effort to write script to just maintain and make it avalible at anytime would be hard
+ - demand for a `proper way ` of `managing ` contianers
+# what  orchestraion do?
+ - high availability
+ - scalbility
+ - disaster recovery
+# kubernets architecture
+ - one main,master Node, most importance node
+ - and alot of worker node
+ - weach node have one or more container in them
+# main Node
+ - Api server= entrypoint to K8s cluster
+ - Controller Manger= keep track of whats happing in the cluster
+ - schduler= ensures pods placement
+ - etcd: backing store
+ - can have multiple main node if needed
+# node and pod
+ node is the pyshicall layer, pod is the smallest unit in k8s, an outer layer over container, best pratice is 1 application per pod
+
+  - each pod have a ip address, but it change once the pod restar
+  - pod connect with each orther by ip
+# Service and ingress
+ - service is permanat ip address
+ - lifecycle of pod and service connected
+ - we can have internal serive or external service
+ - Ingress in Kubernetes is an API object that manages external access to the services in a cluster, typically HTTP and HTTPS. Ingress can provide load balancing, SSL termination, and name-based virtual hosting.
+# configmap and secret
+ - what happen if u just need to change like the api or something normaly u can use (env) in k8s we call it configmaps
+ - but some time we need more than plain text: we can use secret
+# volume 
+ connect external data file that every pod can use
+  - key k8s doesnt manage data presustance
+# Deplpyment and statefulset
+- if a pod die, we can replicate everything on k8s so that it will have the same permanet ip, load balancerm, scailing group
