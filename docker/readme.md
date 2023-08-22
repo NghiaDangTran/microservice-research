@@ -26,6 +26,22 @@ CLI (client machine) and docker server --> docker deamon --> check image or cont
 </br>
 layered file system--> so each new container build they have some of the same layered, so it is super memoery efficent, and they have resource isolation so taht if one container fail or take to much memoery it does not stop orther Container
 
+everything start with a dockerfile, that is like the receipe for the docker deamon to build applications
+```
+FROM node:12
+WORKDIR /app  # the working directory of the app
+COPY pakage.json # direction for dependcy of the applications
+RUN npm install  # this is a cmd to run the conamand for application
+COPY . .  # copy all file to the directory
+# incase u want to skip some file or process we can use .dockerignor
+ENV port=8080 # env file
+EXpose 8000 # a port to connect to the container
+CMD ["cmd1","cmd2"]
+```
+RUN will Executes commands during the build phase and also make a new layered to be cached for the next time
+but run with cmd will not make a new layer, like a runtime command
 
---> jenkin
---> k8s
+docker compose use a set of rule to run multiple container together
+
+we can share data inone docker app using vloumes
+![image](https://github.com/NghiaDangTran/microservice-research/assets/33323750/39b9ff23-699f-41ff-8a1c-485ed69f3caf)
