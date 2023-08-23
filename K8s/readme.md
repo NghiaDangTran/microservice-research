@@ -85,3 +85,63 @@ spec:
 # minikube cluster
  - one machine but mutiple node
  - cloud cluster - more machine and more node
+
+# command
+
+```
+# -------------------
+# Kubernetes (kubectl)
+# -------------------
+
+# Get Information
+# kubectl get nodes
+# kubectl get pods
+# kubectl get svc
+# kubectl get deployments
+# kubectl get all -n [NAMESPACE]
+
+# Create/Apply Resources
+# kubectl create -f [FILE.yaml]
+# kubectl apply -f [FILE.yaml]
+
+# Delete Resources
+# kubectl delete -f [FILE.yaml]
+# kubectl delete pod [POD_NAME]
+
+# Logs & Debugging
+# kubectl logs [POD_NAME]
+# kubectl describe [RESOURCE_TYPE] [RESOURCE_NAME]
+
+# Accessing Cluster
+# kubectl exec -it [POD_NAME] -- [COMMAND]
+# kubectl port-forward svc/[SERVICE_NAME] [LOCAL_PORT]:[REMOTE_PORT]
+
+# -------------------
+# Minikube
+# -------------------
+
+# Cluster Management
+# minikube start
+# minikube stop
+# minikube delete
+
+# Interacting with Cluster
+# minikube ip
+# minikube dashboard
+# minikube ssh
+
+# Services & Networking
+# minikube service list
+# minikube service [SERVICE_NAME]
+
+# Configuration and Environment
+# minikube config view
+# minikube config set [PROPERTY] [VALUE]
+# minikube docker-env
+
+# Addons
+# minikube addons list
+# minikube addons enable [ADDON_NAME]
+# minikube addons disable [ADDON_NAME]
+
+```
