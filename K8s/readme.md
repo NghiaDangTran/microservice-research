@@ -30,6 +30,8 @@
  - lifecycle of pod and service connected
  - we can have internal serive or external service
  - Ingress in Kubernetes is an API object that manages external access to the services in a cluster, typically HTTP and HTTPS. Ingress can provide load balancing, SSL termination, and name-based virtual hosting.
+
+ - ingress like a security group
 # configmap and secret
  - what happen if u just need to change like the api or something normaly u can use (env) in k8s we call it configmaps
  - but some time we need more than plain text: we can use secret
@@ -38,3 +40,48 @@
   - key k8s doesnt manage data presustance
 # Deplpyment and statefulset
 - if a pod die, we can replicate everything on k8s so that it will have the same permanet ip, load balancerm, scailing group
+- service also a load ballcer
+- for repliaction, define bluement for pods (a deployments)
+- deploments abstract of pod, pod abstract of container
+- but for db it need another database to hold the current state of the db
+- it call statefuklset, for mysql,
+```
+Deployment=for stateLess Apps
+StatefulSet= for stateFUL apss or Databases
+```
+stateful set is harder to do than deploment
+
+
+db are often hosted outside of kubernetes cluster
+# k8s configurations
+ - everything must go through api server
+ - in Yaml or json format
+```
+apiVersion: apps/v1  # Using the apps/v1 API group/version
+kind: Deployment     # This is a Deployment kind
+metadata:
+  name: my-deployment        # Name of the deployment
+  labels:
+    app: my-app              # Label for easy filtering
+spec:
+  replicas: 3                # We want 3 replicas of our pod
+  selector:
+    matchLabels:
+      app: my-app            # Selector to match pods with label app=my-app
+  template:                 # Pod template
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-container  # Name of the container within the pod
+        image: my-image:latest  # Image to use for the container
+
+```
+# how it auto healing
+ - so it will check the status data of the etcd with the taml file to do the thing
+# kubectl
+ -  comand line for control the worker node
+# minikube cluster
+ - one machine but mutiple node
+ - cloud cluster - more machine and more node
